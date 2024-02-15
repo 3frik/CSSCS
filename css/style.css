@@ -1,0 +1,85 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#attributeAndValueDisplay{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    border: 2px solid darkslategrey;
+    border-radius: 5px;
+    background-color: rgb(137, 146, 171);
+    padding:5px;
+}
+
+#attributeDisplay, #valueDisplay{
+    display:flex;
+    flex-direction: row;
+    align-items: baseline;
+    width:40%;
+}
+
+#updateBtn{
+    align-self: center;
+}
+
+.cssDiv{
+    background-color: darkcyan;
+    border-radius: 8px;
+    margin:5px;
+    padding: 5px;
+}
+
+.attributeCard{
+    background-color: cadetblue;
+    border-radius: 5px;
+    padding:5px;
+    margin:4px;
+}
+
+.cssTitle{
+    color:antiquewhite;
+    font-size: 2rem;
+}
+
+.likeText{
+    border:2px solid lightblue;
+    background-color:transparent;
+}
+
+#display{
+    border-radius: 8px;
+    background-color: rgb(118, 161, 163);
+    padding:3px;
+}
+
+#displayTitle{
+    color:antiquewhite;
+    font-size: 2rem;
+}
+
+#displayExampleArea{
+    border-radius: 3px;
+    border:3px solid rgb(74, 136, 138);
+    background-color: rgb(168, 206, 207);
+    padding:3px;
+}
+
+.clickable{
+    margin:2px;
+    padding:2px;
+    border:3px solid rgb(135, 187, 189);
+    background-size: contain;
+}
+
+#greatContainer{
+    background-color: azure;
+    padding: 8px;
+}
+
+.clickLi{
+    margin-left: 10px;
+}
+
+.removeStyle{
+    border:0px;
+}

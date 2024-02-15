@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="row">
+    <div id="col1" class="col col-12 col-md-4">
+        <div id="textDiv" class="cssDiv">
+            <p class="cssTitle">Text style</p>
+        </div>
+        <div id="displayDiv" class="cssDiv">
+            <p class="cssTitle">Display style</p>
+        </div>
+    </div>
+    <div id="colMid" class="col col-12 col-md-4">
+        <div id="display">
+            <p id="displayTitle">Try your changes</p>
+            <div id="attributeAndValueDisplay">
+                <label for="activeAttributeDisplay">Attribute </label>
+                <spam id="activeAttributeDisplay">click on an attribute</spam>
+                <label for="activeValueDisplay">Value</label>
+                <spam id="activeValueDisplay">click on a value</spam>
+                <label for="activeElementDisplay">Element</label>
+                <spam id="activeElementDisplay">click on an element</spam>
+                <button id="updateBtn" onclick="updateView()">Update view</button>
+            </div>
+            <div id="displayExampleArea">
+                <div id="greatContainer" selector="Whole Div" class="clickable clickDiv" >
+                    <p class="clickable clickText removeStyle" onclick="selectElement(document.getElementById('greatContainer'))">Whole Div</p>
+                    <p class="clickable clickText" selector="First text" style="" onclick="selectElement(this)">First text</p>
+                    <p class="clickable clickText" selector="Second Text" style="" onclick="selectElement(this)">Second Text</p>
+                    <div id="clickable elementExtra" selector="Container" style="">
+                        <p class="clickable removeStyle" onclick="selectElement(document.getElementById('elementExtra'))">Container</p>
+                        <span class="clickable clickLi" selector="Element 1" style="" onclick="selectElement(this)">Element 1</span>
+                        <span class="clickable clickLi" selector="Element 2" style="" onclick="selectElement(this)">Element 2</span>
+                        <span class="clickable clickLi" selector="Element 3" style="" onclick="selectElement(this)">Element 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="col2" class="col col-12 col-md-4 prov">
+        <div id="backgroundDiv" class="cssDiv">
+            <p class="cssTitle">Background style</p>
+        </div>
+        <div id="borderDiv" class="cssDiv">
+            <p class="cssTitle">Border style</p>
+        </div>
+    </div>
+</div>
+<script src="./js/cheatsheet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
