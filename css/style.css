@@ -2,9 +2,16 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.displayInfo{
+    padding:1em;
+    margin:0px;
+    text-align:center;
+}
+
 #attributeAndValueDisplay{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
+    display:flex;
+    flex-direction:column;
+    align-items: center;;
     border: 2px solid darkslategrey;
     border-radius: 5px;
     background-color: rgb(137, 146, 171);
@@ -34,6 +41,8 @@
     border-radius: 5px;
     padding:5px;
     margin:4px;
+    display:flex;
+    justify-content: space-between;
 }
 
 .cssTitle{

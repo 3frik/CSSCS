@@ -1,12 +1,10 @@
 //object with info about what to show
 class atributeCard {
-    constructor(key,values,jsName){
-        this.attribute=key;
+    constructor(cssName,values,jsName){
+        this.attribute=cssName;
         this.values=values;
         this.jsName=jsName;
     }
-
-    activeValueIndex=0; //index in the values array with the current active value
 
     createElement(){
         //The box
@@ -16,10 +14,11 @@ class atributeCard {
         area.setAttribute("style","display:flex;")
 
         //The attribute button
-        var attributeBtn = document.createElement("button");
+        var attributeBtn = document.createElement("p");
+        attributeBtn.setAttribute("class","attributeText")
         //give style and functionality to the btn
         attributeBtn.innerText=this.attribute;
-        attributeBtn.setAttribute("onclick", "selectAttribute('"+this.attribute+"','"+this.jsName+"')");
+        //attributeBtn.setAttribute("onclick", "selectAttribute('"+this.attribute+"','"+this.jsName+"')");
         
 
         //The value dropdown menu
@@ -40,9 +39,11 @@ class atributeCard {
             //give style and functionality to the btn
             newValue.setAttribute("class","dropdown-item")
             newValue.setAttribute("aria-labelledby",this.attribute+"Menu");
+            newValue.setAttribute("jsName",this.jsName)
+            newValue.setAttribute("attribute",this.attribute)
             console.log()
             newValue.innerText=this.values[i];
-            newValue.setAttribute("onclick","selectValue(this.innerText)");
+            newValue.setAttribute("onclick","selectValue(this)");
             optionsBtn.appendChild(newValue);
         }
 
@@ -103,40 +104,32 @@ var activeElement;  //pointer to the active element
 ////FUNCTIONS TO UPDATE THE EXAMPLES VIEW
 function selectElement(element){ //changes teh active attribute to be modified
     activeElement=element;
-    console.log("active element: "+element);
     elementDisplay.setAttribute("element",element);
     elementDisplay.innerText=element.getAttribute("selector");
+    updateView();
 }
-
-function selectAttribute(attribute, jsattribute){
-    //code that runs when this attribute is clicked on
-    // update active attribute
-    console.log("active attribute: "+attribute +" or "+jsattribute);
-    //Show active attribute
-    attributeDisplay.setAttribute("jsName",attribute);
-    attributeDisplay.innerText=attribute;
-}
-
-selectAttribute("font-size","fontSize");
 
 function selectValue(newValue){
     //code that runs when a value is clicked on
     //upate active value
-    activeValue=newValue;
-    console.log("active value: "+activeValue);
+    activeValue=newValue.innerText;
+    console.log("active attr: "+newValue.innerText+newValue.getAttribute("attribute")+newValue.getAttribute("jsName"));
     //show active Value
-    valueDisplay.setAttribute("value",newValue);
-    valueDisplay.innerText=activeValue;
+    valueDisplay.setAttribute("value",newValue.innerText);
+    valueDisplay.setAttribute("attribute",newValue.getAttribute("attribute"));
+    valueDisplay.innerText=newValue.getAttribute("attribute")+":"+activeValue; //show the value on screen
+    updateView();
 }
 
 function updateView() {
-    console.log("So long so good");
-    var attributeName=attributeDisplay.getAttribute("jsname");
-    var valueValue=valueDisplay.getAttribute("value");
-    
-    const allAttributes = activeElement.getAttribute("style")
-    console.log("style= "+allAttributes)
-    activeElement.setAttribute("style",allAttributes+";"+attributeName+":"+valueValue);
+    if(valueDisplay.innerText!="Choose a value from an attribute" && elementDisplay.innerText!="Choose an element from the preview"){
+        console.log("So long so good");
+        var attributeName=valueDisplay.getAttribute("attribute");
+        var attributeValue=valueDisplay.getAttribute("value");
+        const allAttributes = activeElement.getAttribute("style")
+        console.log("style= "+attributeName)
+        activeElement.setAttribute("style",allAttributes+attributeName+":"+attributeValue+";");
+    }
 }
 
 

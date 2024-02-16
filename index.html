@@ -21,20 +21,16 @@
         <div id="display">
             <p id="displayTitle">Try your changes</p>
             <div id="attributeAndValueDisplay">
-                <label for="activeAttributeDisplay">Attribute </label>
-                <spam id="activeAttributeDisplay">click on an attribute</spam>
-                <label for="activeValueDisplay">Value</label>
-                <spam id="activeValueDisplay">click on a value</spam>
-                <label for="activeElementDisplay">Element</label>
-                <spam id="activeElementDisplay">click on an element</spam>
-                <button id="updateBtn" onclick="updateView()">Update view</button>
+                <p id="activeValueDisplay" class="displayInfo">Choose a value from an attribute</p>
+                <p id="activeElementDisplay" class="displayInfo">Choose an element from the preview</p>
             </div>
+            <p class="displayInfo">Preview:</p>
             <div id="displayExampleArea">
-                <div id="greatContainer" selector="Whole Div" class="clickable clickDiv" >
+                <div id="greatContainer" selector="Whole Div" style="" class="clickable clickDiv" >
                     <p class="clickable clickText removeStyle" onclick="selectElement(document.getElementById('greatContainer'))">Whole Div</p>
                     <p class="clickable clickText" selector="First text" style="" onclick="selectElement(this)">First text</p>
                     <p class="clickable clickText" selector="Second Text" style="" onclick="selectElement(this)">Second Text</p>
-                    <div id="clickable elementExtra" selector="Container" style="">
+                    <div id="elementExtra" class="clickable" style="" selector="Container" style="">
                         <p class="clickable removeStyle" onclick="selectElement(document.getElementById('elementExtra'))">Container</p>
                         <span class="clickable clickLi" selector="Element 1" style="" onclick="selectElement(this)">Element 1</span>
                         <span class="clickable clickLi" selector="Element 2" style="" onclick="selectElement(this)">Element 2</span>
